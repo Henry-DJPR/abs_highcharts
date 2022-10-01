@@ -1,0 +1,27 @@
+{
+  "name": "abs_highcharts",
+  "version": "1.0.0",
+  "description": "Charting ABS data via SDMX API",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Henry-DJPR/abs_highcharts.git"
+  },
+  "author": "Henry McMillan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Henry-DJPR/abs_highcharts/issues"
+  },
+  "homepage": "https://github.com/Henry-DJPR/abs_highcharts#readme",
+  "dependencies": {
+    "bootstrap": "^5.2.1",
+    "highcharts": "^10.2.1"
+  },
+  "devDependencies": {
+    "parcel": "^2.7.0",
+    "process": "^0.11.10"
+  }
+}
