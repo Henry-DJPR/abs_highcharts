@@ -3,9 +3,12 @@ var Highcharts = require("highcharts");
 
 //Functions
 function makeChart(data, target) {
+  //variables
   const series = data.data.dataSets[0].series;
   var tidySeries = [];
+  var dateSeries = [];
 
+  // tidy data
   for (const i in series) {
     var currentSeries = [];
     for (const j in series[i].observations) {
@@ -17,6 +20,13 @@ function makeChart(data, target) {
     });
   }
   console.log(tidySeries);
+
+  // tidy dates
+  for (const i in data.data.structure.dimensions.observation[0].values) {
+    dateSeries.push(
+      data.data.structure.dimensions.observation[0].values[i].name
+    );
+  }
 
   const chart = Highcharts.chart(target, {
     chart: {
@@ -36,6 +46,9 @@ function makeChart(data, target) {
           data.data.structure.attributes.dataSet[1].values["0"].name +
           ")",
       },
+    },
+    xAxis: {
+      categories: dateSeries,
     },
     series: tidySeries,
     credits: {
